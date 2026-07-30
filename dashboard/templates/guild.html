@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+    <h2>⚙️ Guild {{ guild_id }} - Configurar Módulos</h2>
+    <p>Defina onde cada módulo é ativo nesta guild (igual /configurar e /modulos no Discord)</p>
+    <a href="/" class="btn">⬅ Voltar</a>
+</div>
+
+<div class="grid">
+{% for modulo, dados in status.items() %}
+<div class="card modulo-card {{ modulo }}">
+    <h2>
+        {% if modulo=='economia' %}💸{% elif modulo=='rpg' %}⚔️{% elif modulo=='pokemon' %}🔮{% elif modulo=='familia' %}💍{% elif modulo=='casa' %}🏠{% elif modulo=='farm' %}⛏️{% elif modulo=='eventos' %}🎉{% else %}🎮{% endif %}
+        {{ modulo.capitalize() }}
+        {% if dados.global %}<span class="badge ativo">GLOBAL ATIVO</span>{% else %}<span class="badge desativado">GLOBAL DESATIVADO</span>{% endif %}
+    </h2>
+    
+    <form method="POST" action="/guild/{{ guild_id }}/edit" style="margin:10px 0;">
+        <input type="hidden" name="modulo" value="{{ modulo }}">
+        {% if dados.global %}
+        <button name="acao" value="global_desativar" class="btn desativar">❌ Desativar Global</button>
+        {% else %}
+        <button name="acao" value="global_ativar" class="btn ativar">✅ Ativar Global</button>
+        {% endif %}
+    </form>
+
+    <h3>📍 Por canal:</h3>
+    {% if dados.canais %}
+        <table>
+        <tr><th>Canal ID</th><th>Status</th><th>Ação</th></tr>
+        {% for ch_id, habilitado in dados.canais.items() %}
+        <tr>
+            <td>{{ ch_id }}</td>
+            <td>{% if habilitado %}<span class="badge ativo">Ativo</span>{% else %}<span class="badge desativado">Desativado</span>{% endif %}</td>
+            <td>
+                <form method="POST" action="/guild/{{ guild_id }}/edit" style="display:inline;">
+                    <input type="hidden" name="modulo" value="{{ modulo }}">
+                    <input type="hidden" name="channel_id" value="{{ ch_id }}">
+                    {% if habilitado %}
+                    <button name="acao" value="desativar" class="btn desativar">Desativar</button>
+                    {% else %}
+                    <button name="acao" value="ativar" class="btn ativar">Ativar</button>
+                    {% endif %}
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+        </table>
+    {% else %}
+        <p>Sem config por canal (usa global). Ativo em todos os canais se global ativo.</p>
+    {% endif %}
+
+    <h4 style="margin-top:15px;">➕ Adicionar exceção por canal:</h4>
+    <form method="POST" action="/guild/{{ guild_id }}/edit">
+        <input type="hidden" name="modulo" value="{{ modulo }}">
+        <input type="number" name="channel_id" placeholder="ID do canal Discord" required>
+        <select name="acao"><option value="ativar">✅ Ativar</option><option value="desativar">❌ Desativar</option></select>
+        <button class="btn primary">Salvar</button>
+    </form>
+</div>
+{% endfor %}
+</div>
+
+<div class="grid">
+    <div class="card">
+        <h2>🏆 Top 5 Ricos</h2>
+        <table>
+        {% for r in top_ricos %}
+        <tr><td>User {{ r['user_id'] }}</td><td>💸 {{ r['total'] }}</td></tr>
+        {% else %}
+        <tr><td>Nenhum</td></tr>
+        {% endfor %}
+        </table>
+    </div>
+    <div class="card">
+        <h2>🎉 Eventos Ativos</h2>
+        {% for e in eventos %}
+        <p>{{ e['evento_id'] }} - {{ e['multiplicador'] }}x até {{ e['fim'] }}</p>
+        {% else %}
+        <p>Nenhum evento ativo</p>
+        {% endfor %}
+        <p><a href="#" onclick="alert('Use /iniciar-evento no Discord ou implemente botão aqui!')">Iniciar via Discord</a></p>
+    </div>
+    <div class="card">
+        <h2>💍 Casamentos</h2>
+        {% for c in casamentos %}
+        <p>{{ c['user1_id'] }} 💍 {{ c['user2_id'] }} - {{ c['data'][:10] }}</p>
+        {% else %}
+        <p>Nenhum casamento</p>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="card">
+    <h2>💡 Como achar ID do canal?</h2>
+    <p>No Discord: Configurações > Avançado > Ativar Modo Desenvolvedor > Clique direito no canal > Copiar ID</p>
+    <p>Ou use <code>/modulos</code> no bot que mostra menções de canais</p>
+</div>
+{% endblock %}

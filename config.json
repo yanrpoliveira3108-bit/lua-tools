@@ -1,0 +1,155 @@
+{
+  "nome": "Lua Tools",
+  "versao": "V3 ULTIMATE - FINAL - yna.019",
+  "dono": {
+    "tag": "yna.019",
+    "insta": "yna.019",
+    "discord": "yna.019",
+    "marca_dagua": "🌙 Lua Tools | Dev: yna.019 | Insta: yna.019 | DC: yna.019 | Anti-Roubo"
+  },
+  "prefix": "!",
+  "cores": {
+    "principal": 5814783,
+    "economia": 3066993,
+    "rpg": 15158332,
+    "pokemon": 3447003,
+    "erro": 15548997,
+    "sucesso": 3066993,
+    "loja": 10181046,
+    "familia": 15277667,
+    "casa": 15105570,
+    "farm": 2067276,
+    "evento": 15844367,
+    "dono": 10181046
+  },
+  "economia": {
+    "moeda_nome": "LuaCoins",
+    "moeda_emoji": "🌙",
+    "daily_min": 500,
+    "daily_max": 1500,
+    "work_min": 100,
+    "work_max": 400,
+    "start_money": 1000,
+    "loja": {
+      "vip": {"preco": 10000, "desc": "Cargo VIP por 7 dias", "emoji": "🎭", "tipo": "cargo"},
+      "roubo_protegido": {"preco": 2000, "desc": "24h sem ser roubado", "emoji": "🔫", "tipo": "consumivel"},
+      "caixa_misteriosa": {"preco": 1500, "desc": "Prêmio aleatório", "emoji": "🎁", "tipo": "consumivel"},
+      "pocao_vida": {"preco": 300, "desc": "Recupera 50 vida RPG", "emoji": "🧪", "tipo": "consumivel"},
+      "pocao_vida_grande": {"preco": 800, "desc": "Recupera 100% vida RPG", "emoji": "💉", "tipo": "consumivel"},
+      "anel_casamento": {"preco": 5000, "desc": "Necessário para casar", "emoji": "💍", "tipo": "casamento"},
+      "picareta_madeira": {"preco": 500, "desc": "Ferramenta farm nível 1", "emoji": "⛏️", "tipo": "farm"},
+      "picareta_ferro": {"preco": 2000, "desc": "Ferramenta farm nível 2 - 2x recursos", "emoji": "⛏️", "tipo": "farm"},
+      "picareta_diamante": {"preco": 8000, "desc": "Ferramenta farm nível 3 - 3x recursos + raros", "emoji": "💎", "tipo": "farm"}
+    },
+    "trabalhos": {
+      "programador": {"salario_min": 300, "salario_max": 600, "xp": 10, "emoji": "💻", "desc": "Programa bots Discord"},
+      "streamer": {"salario_min": 150, "salario_max": 800, "xp": 8, "emoji": "🎮", "desc": "Faz lives, depende da sorte"},
+      "padeiro": {"salario_min": 200, "salario_max": 400, "xp": 5, "emoji": "🍞", "desc": "Vende pão de queijo"},
+      "minerador": {"salario_min": 250, "salario_max": 500, "xp": 7, "emoji": "⛏️", "desc": "Minera Bitcoin"},
+      "policial": {"salario_min": 350, "salario_max": 550, "xp": 12, "emoji": "👮", "desc": "Protege a cidade"},
+      "medico": {"salario_min": 400, "salario_max": 700, "xp": 15, "emoji": "👨‍⚕️", "desc": "Salva vidas"}
+    },
+    "cargos_loja": {
+      "vip": {"nome": "VIP", "preco": 10000, "cor": "gold", "duracao_dias": 7, "emoji": "👑"},
+      "premium": {"nome": "Premium", "preco": 25000, "cor": "purple", "duracao_dias": 30, "emoji": "💎"},
+      "booster": {"nome": "Booster", "preco": 15000, "cor": "pink", "duracao_dias": 14, "emoji": "🚀"},
+      "lendario": {"nome": "Lendário", "preco": 50000, "cor": "red", "duracao_dias": 60, "emoji": "🔥"}
+    }
+  },
+  "rpg": {
+    "xp_por_mensagem": 5,
+    "xp_por_batalha": 25,
+    "consumiveis": {
+      "pocao_vida": {"nome": "Poção de Vida", "cura": 50, "preco": 300, "emoji": "🧪"},
+      "pocao_vida_grande": {"nome": "Poção Grande", "cura": 1000, "preco": 800, "emoji": "💉", "tipo": "full"},
+      "pocao_forca": {"nome": "Poção de Força", "bonus_ataque": 10, "duracao_batalhas": 3, "preco": 500, "emoji": "💪"}
+    },
+    "equipamentos": {
+      "espada_madeira": {"nome": "Espada de Madeira", "tipo": "arma", "ataque": 5, "defesa": 0, "preco": 500, "nivel_min": 1, "emoji": "🗡️"},
+      "espada_ferro": {"nome": "Espada de Ferro", "tipo": "arma", "ataque": 15, "defesa": 2, "preco": 2000, "nivel_min": 3, "emoji": "⚔️"},
+      "espada_diamante": {"nome": "Espada de Diamante", "tipo": "arma", "ataque": 35, "defesa": 5, "preco": 8000, "nivel_min": 8, "emoji": "💎"},
+      "excalibur": {"nome": "Excalibur Lendária", "tipo": "arma", "ataque": 80, "defesa": 15, "preco": 25000, "nivel_min": 15, "emoji": "✨"},
+      "escudo_madeira": {"nome": "Escudo de Madeira", "tipo": "escudo", "ataque": 0, "defesa": 8, "preco": 600, "nivel_min": 1, "emoji": "🛡️"},
+      "escudo_ferro": {"nome": "Escudo de Ferro", "tipo": "escudo", "ataque": 2, "defesa": 20, "preco": 2500, "nivel_min": 4, "emoji": "🛡️"},
+      "armadura_couro": {"nome": "Armadura de Couro", "tipo": "armadura", "ataque": 0, "defesa": 12, "preco": 1000, "nivel_min": 2, "emoji": "🥋"},
+      "armadura_diamante": {"nome": "Armadura de Diamante", "tipo": "armadura", "ataque": 5, "defesa": 35, "preco": 10000, "nivel_min": 10, "emoji": "👑"},
+      "anel_poder": {"nome": "Anel do Poder", "tipo": "acessorio", "ataque": 20, "defesa": 10, "preco": 15000, "nivel_min": 12, "emoji": "💍"},
+      "bota_veloz": {"nome": "Bota Veloz", "tipo": "acessorio", "ataque": 8, "defesa": 8, "preco": 3000, "nivel_min": 5, "emoji": "👢"}
+    },
+    "monstros": [
+      {"nome": "Slime", "vida": 40, "ataque": 8, "defesa": 2, "xp": 15, "dinheiro": 50},
+      {"nome": "Goblin", "vida": 70, "ataque": 15, "defesa": 5, "xp": 30, "dinheiro": 120},
+      {"nome": "Orc", "vida": 120, "ataque": 25, "defesa": 10, "xp": 60, "dinheiro": 250},
+      {"nome": "Dragão Bebê", "vida": 200, "ataque": 40, "defesa": 15, "xp": 120, "dinheiro": 500},
+      {"nome": "Dragão Ancião", "vida": 500, "ataque": 70, "defesa": 30, "xp": 300, "dinheiro": 1500}
+    ]
+  },
+  "pokemon": {
+    "spawn_chance": 20,
+    "messages_para_spawn": 20,
+    "pokebolas": {
+      "pokebola": {"nome": "Pokébola", "chance": 0.6, "preco": 100, "emoji": "🔴"},
+      "grande_bola": {"nome": "Grande Bola", "chance": 0.8, "preco": 300, "emoji": "🔵"},
+      "ultra_bola": {"nome": "Ultra Bola", "chance": 0.92, "preco": 800, "emoji": "🟡"},
+      "master_bola": {"nome": "Master Bola", "chance": 1.0, "preco": 5000, "emoji": "🟣"},
+      "safari_bola": {"nome": "Safari Bola", "chance": 0.7, "preco": 200, "emoji": "🟢"}
+    },
+    "raridades": {"comum": 0.7, "raro": 0.2, "lendario": 0.08, "mitico": 0.02},
+    "batalha": {
+      "hp_base": 50,
+      "atk_por_nivel": 2,
+      "tipos_vantagem": {
+        "fogo": ["planta", "gelo"],
+        "agua": ["fogo", "pedra"],
+        "planta": ["agua", "pedra"]
+      }
+    }
+  },
+  "casamento": {
+    "custo_anel": 5000,
+    "bonus_diario_casado": 200,
+    "custo_divorcio": 1000,
+    "custo_filho": 10000,
+    "heranca_percent": 0.1
+  },
+  "casa": {
+    "niveis": {
+      "1": {"nome": "Barraco", "preco": 5000, "slots_moveis": 3, "emoji": "🏚️"},
+      "2": {"nome": "Casa Simples", "preco": 15000, "slots_moveis": 6, "emoji": "🏠"},
+      "3": {"nome": "Mansão", "preco": 50000, "slots_moveis": 12, "emoji": "🏡"},
+      "4": {"nome": "Castelo", "preco": 150000, "slots_moveis": 25, "emoji": "🏰"}
+    },
+    "moveis": {
+      "cadeira": {"nome": "Cadeira", "preco": 500, "conforto": 5, "emoji": "🪑"},
+      "sofa": {"nome": "Sofá", "preco": 2000, "conforto": 15, "emoji": "🛋️"},
+      "cama": {"nome": "Cama", "preco": 3000, "conforto": 20, "emoji": "🛏️"},
+      "tv": {"nome": "TV 4K", "preco": 5000, "conforto": 25, "emoji": "📺"},
+      "pc_gamer": {"nome": "PC Gamer", "preco": 8000, "conforto": 40, "emoji": "💻"},
+      "piscina": {"nome": "Piscina", "preco": 15000, "conforto": 60, "emoji": "🏊"},
+      "estante_trofeus": {"nome": "Estante Troféus", "preco": 10000, "conforto": 35, "emoji": "🏆"}
+    }
+  },
+  "farm": {
+    "recursos": {
+      "madeira": {"nome": "Madeira", "emoji": "🪵", "valor": 10, "raridade": "comum"},
+      "pedra": {"nome": "Pedra", "emoji": "🪨", "valor": 15, "raridade": "comum"},
+      "ferro": {"nome": "Ferro", "emoji": "⛏️", "valor": 50, "raridade": "incomum"},
+      "ouro": {"nome": "Ouro", "emoji": "🪙", "valor": 150, "raridade": "raro"},
+      "diamante": {"nome": "Diamante", "emoji": "💎", "valor": 500, "raridade": "lendario"},
+      "netherita": {"nome": "Netherita", "emoji": "🔥", "valor": 1000, "raridade": "mitico"}
+    },
+    "ferramentas": {
+      "picareta_madeira": {"multiplicador": 1, "chance_raro": 0.05},
+      "picareta_ferro": {"multiplicador": 2, "chance_raro": 0.15},
+      "picareta_diamante": {"multiplicador": 3, "chance_raro": 0.35}
+    },
+    "cooldown_segundos": 60
+  },
+  "eventos": {
+    "hora_feliz": {"nome": "Hora Feliz 2x Dinheiro", "multiplicador": 2, "emoji": "🎉", "duracao_min": 60},
+    "chuva_pokemon": {"nome": "Chuva de Pokémon", "multiplicador": 3, "emoji": "🌧️", "duracao_min": 30, "tipo": "pokemon_spawn"},
+    "invasao_monstros": {"nome": "Invasão de Monstros RPG", "multiplicador": 2, "emoji": "👹", "duracao_min": 45, "tipo": "rpg_xp"},
+    "bonus_trabalho": {"nome": "Bônus Trabalho", "multiplicador": 1.5, "emoji": "💼", "duracao_min": 60, "tipo": "trabalho"}
+  },
+  "modulos": ["economia", "rpg", "pokemon", "diversao", "familia", "casa", "farm", "eventos"]
+}

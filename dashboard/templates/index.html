@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+    <h2>📊 Painel Geral - Lolitta V3 ULTIMATE</h2>
+    <p>Configure onde cada módulo é ativo igual painel da Lolitta/Loritta!</p>
+    <p><strong>8 módulos:</strong> Economia, RPG, Pokémon, Diversão, Família, Casa, Farm, Eventos</p>
+</div>
+
+<div class="grid">
+    <div class="card stat">
+        <h3>{{ stats.usuarios_economia or 0 }}</h3>
+        <p>💸 Usuários Economia</p>
+    </div>
+    <div class="card stat">
+        <h3>{{ stats.usuarios_rpg or 0 }}</h3>
+        <p>⚔️ Aventureiros RPG</p>
+    </div>
+    <div class="card stat">
+        <h3>{{ stats.treinadores or 0 }}</h3>
+        <p>🔮 Treinadores Pokémon</p>
+    </div>
+    <div class="card stat">
+        <h3>{{ stats.casamentos or 0 }}</h3>
+        <p>💍 Casamentos</p>
+    </div>
+    <div class="card stat">
+        <h3>{{ stats.casas or 0 }}</h3>
+        <p>🏠 Casas</p>
+    </div>
+</div>
+
+<div class="card">
+    <h2>🏰 Guilds Configuradas ({{ guilds|length }})</h2>
+    {% if guilds %}
+    <table>
+        <tr><th>ID da Guild</th><th>Ações</th></tr>
+        {% for gid in guilds %}
+        <tr>
+            <td>{{ gid }}</td>
+            <td><a href="/guild/{{ gid }}" class="btn primary">⚙️ Configurar Módulos</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p>Nenhuma guild no banco ainda. Adicione o bot em um servidor e use algum comando!</p>
+    <p>Ou teste com API: <a href="/api/guilds">/api/guilds</a></p>
+    {% endif %}
+</div>
+
+<div class="card">
+    <h2>🛠️ Como funciona o Dashboard?</h2>
+    <p>Igual painel da Lolitta original:</p>
+    <ul style="margin-left:20px; margin-top:10px;">
+        <li><strong>Global:</strong> Ativa/desativa módulo na guild inteira</li>
+        <li><strong>Por canal:</strong> Define onde cada bot funciona. Ex: só permitir Pokémon em #pokecentro, economia em #economia</li>
+        <li>Comandos Discord continuam funcionando: <code>/configurar</code> e <code>/modulos</code></li>
+        <li>Este dashboard é alternativa web - edita o mesmo banco <code>database.db</code></li>
+    </ul>
+</div>
+
+<div class="card">
+    <h2>📦 Módulos V3</h2>
+    <div class="grid">
+        <div class="card modulo-card economia"><h3>💸 Economia</h3><p>Daily, banco, trabalhos com nível, loja, mochila</p></div>
+        <div class="card modulo-card rpg"><h3>⚔️ RPG</h3><p>Classes, equipamentos, caçada PvE, PvP, poções usáveis</p></div>
+        <div class="card modulo-card pokemon"><h3>🔮 Pokémon</h3><p>Spawn raro, pokébolas, PvP batalha, rank treinadores</p></div>
+        <div class="card modulo-card familia"><h3>💍 Família</h3><p>Casamento, aceitar, divorciar, filhos, herança</p></div>
+        <div class="card modulo-card casa"><h3>🏠 Casa</h3><p>4 níveis de casa, 7 móveis, conforto, renda passiva</p></div>
+        <div class="card modulo-card farm"><h3>⛏️ Farm</h3><p>6 recursos, ferramentas 3x, vender, rank mineradores</p></div>
+        <div class="card modulo-card eventos"><h3>🎉 Eventos</h3><p>Hora feliz 2x, chuva pokémon 3x, invasão RPG, bônus trabalho</p></div>
+        <div class="card modulo-card"><h3>👑 Cargos</h3><p>Loja de cargos VIP com dinheiro do bot, expiração automática</p></div>
+    </div>
+</div>
+{% endblock %}

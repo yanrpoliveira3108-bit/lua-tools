@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Lua Tools Dashboard - yna.019{% endblock %}</title>
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f0f0f; color: #fff; }
+        .navbar { background: #1a1a1a; padding: 15px 30px; display:flex; justify-content:space-between; align-items:center; border-bottom: 2px solid #ff8a00; }
+        .navbar h1 { color: #ff8a00; }
+        .container { max-width: 1200px; margin: 20px auto; padding: 20px; }
+        .card { background: #1e1e1e; border-radius: 12px; padding: 20px; margin-bottom: 20px; border: 1px solid #333; }
+        .card h2 { color: #ff8a00; margin-bottom: 15px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .badge { padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: bold; }
+        .badge.ativo { background: #2ecc71; color: #000; }
+        .badge.desativado { background: #e74c3c; }
+        .btn { padding: 8px 15px; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; }
+        .btn.ativar { background: #2ecc71; color: #000; }
+        .btn.desativar { background: #e74c3c; color: #fff; }
+        .btn.primary { background: #ff8a00; color: #000; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 10px; text-align: left; border-bottom: 1px solid #333; }
+        th { color: #ff8a00; }
+        input, select { background: #2a2a2a; color: #fff; border: 1px solid #444; padding: 8px; border-radius: 6px; }
+        .stat { text-align: center; padding: 15px; }
+        .stat h3 { font-size: 2em; color: #ff8a00; }
+        .modulo-card { border-left: 4px solid #ff8a00; }
+        .economia { border-left-color: #2ecc71; }
+        .rpg { border-left-color: #e74c3c; }
+        .pokemon { border-left-color: #3498db; }
+        .familia { border-left-color: #e91e63; }
+        .casa { border-left-color: #f1c40f; }
+        .farm { border-left-color: #27ae60; }
+        .eventos { border-left-color: #9b59b6; }
+        a { color: #ff8a00; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .footer { text-align:center; padding:20px; color:#888; border-top:1px solid #333; margin-top:30px; }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h1>🌙 Lua Tools Dashboard - yna.019</h1>
+        <div>
+            <a href="/">🏠 Início</a> | 
+            <a href="https://discord.com" target="_blank">Discord</a> |
+            {{ config.nome }} {{ config.versao }} | {{ config.dono.marca_dagua }}
+        </div>
+    </div>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+    <div class="footer">
+        🌙 Lua Tools V3 - Dev: yna.019 | Insta: yna.019 | Discord: yna.019 | Anti-Roubo System
+    </div>
+</body>
+</html>

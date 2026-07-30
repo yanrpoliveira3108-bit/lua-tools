@@ -1,0 +1,49 @@
+# 🌙 Lua Tools - GitIgnore
+
+# Bot
+.env
+database.db
+*.db
+*.sqlite
+*.sqlite3
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+env/
+ENV/
+*.egg-info/
+dist/
+build/
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Zip antigo
+*.zip
+!requirements.txt
+
+# Dashboard cache
+dashboard/__pycache__/
+instance/
+
+# Tokens temporários
+token.txt
