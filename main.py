@@ -35,7 +35,7 @@ class LuaToolsBot(commands.Bot):
     async def setup_hook(self):
         await database.init_db()
         for file in os.listdir("./cogs"):
-            if file.endswith(".py"):
+            if file.endswith(".py") and file != "__init__.py" and not file.startswith("_"):
                 try:
                     await self.load_extension(f"cogs.{file[:-3]}")
                     print(f"[COG] ✅ {file} carregado - {TAG}")
